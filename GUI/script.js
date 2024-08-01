@@ -3,6 +3,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById('codeInput'), {
     lineNumbers: true,
     mode: "javascript",
     theme: "dracula",
+    viewportMargin: Infinity, // asegura que todo el contenido sea visible
 });
 
 // Inicializa CodeMirror en el textarea con id 'consoleOutput'
@@ -10,7 +11,8 @@ var consoleEditor = CodeMirror.fromTextArea(document.getElementById('consoleOutp
     lineNumbers: false,
     mode: "text/plain",
     theme: "dracula",
-    readOnly: true
+    readOnly: true,
+    viewportMargin: Infinity,
 });
 
 //funcion para el boton 'open', abre un archivo

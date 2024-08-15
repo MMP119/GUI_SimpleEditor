@@ -43,6 +43,14 @@ body {
     transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
 }
 
+#clearButton{
+    background-color: #1a1a1a;
+}
+
+#clearButton:hover{
+    background-color: #1e1e1e;
+}
+
 #openButton{
     background-color: #007bff;
 }
@@ -51,12 +59,28 @@ body {
     background-color: #0b7dda;
 }
 
-#clearButton{
+#saveButton{
+    background-color: #17a2b8;
+}
+
+#saveButton:hover{
+    background-color: #1d9ca7;
+}
+
+#erroresButton{
     background-color: #1a1a1a;
 }
 
-#clearButton:hover{
-    background-color: #1e1e1e;
+#erroresButton:hover{
+    background-color: #e68a00;
+}
+
+#simbolosButton{
+    background-color: #1a1a1a;
+}
+
+#simbolosButton:hover{
+    background-color: #ff9800;
 }
 
 #runButton{
@@ -131,4 +155,46 @@ body {
     height: 100%;
     overflow: auto; /* Hace que el contenido se desplace si es necesario */
     box-sizing: border-box;
+}
+
+.errores {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #f44336;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 195px;
+    z-index: 1;
+}
+
+.dropdown-content button {
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #da190b;
 }

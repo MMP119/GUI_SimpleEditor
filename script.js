@@ -1,7 +1,7 @@
 // Inicializa CodeMirror en el textarea con id 'codeInput'
 var editor = CodeMirror.fromTextArea(document.getElementById('codeInput'), {
     lineNumbers: true,
-    mode: "javascript",
+    mode: 'text/x-java', // Modo Java
     theme: "dracula",
     viewportMargin: Infinity, // asegura que todo el contenido sea visible
 });
@@ -43,4 +43,48 @@ document.getElementById('runButton').addEventListener('click', function() {
 document.getElementById('clearButton').addEventListener('click', function() {
     editor.setValue('');
     consoleEditor.setValue('');
+});
+
+
+// funcion para el boton 'save', guarda el archivo
+document.getElementById('saveButton').addEventListener('click', function() {
+    // Solicitar al usuario el nombre del archivo
+    let fileName = window.prompt('Ingrese el nombre del archivo:', '');
+    
+    // Si el usuario cancela o no ingresa un nombre, salir de la función
+    if (fileName === null || fileName === '') {
+        return; // No hacer nada si el usuario cancela
+    }
+    
+    // Obtener el contenido del editor
+    const codeContent = editor.getValue();
+
+    // Asegurar que el archivo tenga una extensión
+    if (!fileName.endsWith('.aok')) {
+        fileName += '.aok';
+    }
+
+    // Crear un blob con el contenido del editor
+    const blob = new Blob([codeContent], { type: 'text/plain' });
+
+    // Crear un enlace de descarga
+    const downloadLink = document.createElement('a');
+    downloadLink.href = window.URL.createObjectURL(blob);
+
+    // Asignar el nombre ingresado por el usuario al archivo
+    downloadLink.download = fileName;
+
+    // Simular un clic en el enlace para iniciar la descarga
+    downloadLink.click();
+});
+
+//para el erroresButton
+document.getElementById('erroresButton').addEventListener('click', function() {
+
+
+});
+
+
+//para el botón de tabla de simbolos
+document.getElementById('simbolosButton').addEventListener('click', function() {
 });

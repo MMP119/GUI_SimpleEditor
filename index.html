@@ -12,8 +12,21 @@
 <body>
     <div class="editor-container">
         <div class="header">  
+            <button id="clearButton"><span class="material-symbols-outlined">new_window</span></button>
             <button id="openButton"><span class="material-symbols-outlined">upload</span></button>
-            <button id="clearButton"><span class="material-symbols-outlined">mop</span></button>
+
+            <button id="saveButton"><span class="material-symbols-outlined">save</span></button>
+
+            <div class="errores">
+                <div class="dropdown">
+                    <button class="dropbtn"><span class="material-symbols-outlined">sd_card_alert</span>Reportes</button>
+                    <div class="dropdown-content">
+                        <button id="erroresButton"><span class="material-symbols-outlined">error</span>Errores</button>
+                        <button id="simbolosButton"><span class="material-symbols-outlined">table</span>Tabla de Símbolos</button>
+                    </div>
+                </div>
+            </div>
+
             <button id="runButton"><span class="material-symbols-outlined">play_arrow</span></button>
         </div>
         <div class="main">
@@ -28,7 +41,7 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/clike/clike.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

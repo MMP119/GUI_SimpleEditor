@@ -1,4 +1,4 @@
-// Inicializa CodeMirror en el textarea con id 'codeInput'
+// inicializa CodeMirror en el textarea con id 'codeInput'
 var editor = CodeMirror.fromTextArea(document.getElementById('codeInput'), {
     lineNumbers: true,
     mode: 'text/x-java', // Modo Java
@@ -6,7 +6,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById('codeInput'), {
     viewportMargin: Infinity, // asegura que todo el contenido sea visible
 });
 
-// Inicializa CodeMirror en el textarea con id 'consoleOutput'
+// inicializa CodeMirror en el textarea con id 'consoleOutput'
 var consoleEditor = CodeMirror.fromTextArea(document.getElementById('consoleOutput'), {
     lineNumbers: false,
     mode: "text/plain",
@@ -48,15 +48,15 @@ document.getElementById('clearButton').addEventListener('click', function() {
 
 // funcion para el boton 'save', guarda el archivo
 document.getElementById('saveButton').addEventListener('click', function() {
-    // Solicitar al usuario el nombre del archivo
+    // solicitar al usuario el nombre del archivo
     let fileName = window.prompt('Ingrese el nombre del archivo:', '');
     
-    // Si el usuario cancela o no ingresa un nombre, salir de la función
+    // si el usuario cancela o no ingresa un nombre, salir de la función
     if (fileName === null || fileName === '') {
         return; // No hacer nada si el usuario cancela
     }
     
-    // Obtener el contenido del editor
+    // obtener el contenido del editor
     const codeContent = editor.getValue();
 
     // Asegurar que el archivo tenga una extensión
@@ -64,17 +64,17 @@ document.getElementById('saveButton').addEventListener('click', function() {
         fileName += '.aok';
     }
 
-    // Crear un blob con el contenido del editor
+    // crear un blob con el contenido del editor
     const blob = new Blob([codeContent], { type: 'text/plain' });
 
-    // Crear un enlace de descarga
+    // crear un enlace de descarga
     const downloadLink = document.createElement('a');
     downloadLink.href = window.URL.createObjectURL(blob);
 
-    // Asignar el nombre ingresado por el usuario al archivo
+    // asignar el nombre ingresado por el usuario al archivo
     downloadLink.download = fileName;
 
-    // Simular un clic en el enlace para iniciar la descarga
+    // simular un clic en el enlace para iniciar la descarga
     downloadLink.click();
 });
 

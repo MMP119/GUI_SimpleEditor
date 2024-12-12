@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-    <img src="imgs/GUI.jpg" width="1200px">
+    <img src="imgs/GUI.jpg" width="auto">
     <br>
     <text> Graphical User Interface </text>
 </p>

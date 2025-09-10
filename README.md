@@ -1,7 +1,7 @@
 # <p align="center"> GUI_SimpleEditor </p>
 
 <p align="center">
-    Interfaz simple de un editor de código, hecho con HTML, JS, CSS.
+    Interfaz de un editor de código, hecho con HTML, JS, CSS.
 </p>
 
 <p align="center">
